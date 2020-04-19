@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="32902861-5eb3-4068-a340-39b3d11e1be6" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="helloworld-sampleFlow" doc:id="5f56be74-ec77-430f-aafc-44a1f46e42a6" >
+		<http:listener doc:name="Listener" doc:id="cfe8fad4-c686-41ba-ae5a-3222d592f9af" config-ref="HTTP_Listener_config" path="/api/hellow"/>
+		<set-variable value="#[attributes.queryParams.'name']" doc:name="Set Variable" doc:id="0370ea72-c576-4096-a3bc-d6775c9efab6" variableName="name"/>
+		<set-payload value="#['Hello' ++ vars.name]" doc:name="Set Payload" doc:id="4b199d93-6eec-4273-99ac-c54ab742be27" />
+	</flow>
+</mule>
