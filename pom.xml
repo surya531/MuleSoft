@@ -25,7 +25,7 @@
                   <uri>https://anypoint.mulesoft.com</uri>
                   <muleVersion>4.4.0</muleVersion>
                   <username>agastya2021</username>
-                  <password>Sudha@1991}</password>
+                  <password>Sudha@1991</password>
                   <applicationName>helloworld-sample123abc</applicationName>
                   <environment>Sandbox</environment>
                   <workerType>MICRO</workerType>
